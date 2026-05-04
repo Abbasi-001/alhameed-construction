@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMPÉRO • Tailored for Legacy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8F4ED] overflow-x-hidden">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full bg-[#F8F4ED]/80 backdrop-blur-xl z-50 border-b border-[#C6A76A]/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <h1 onclick="navigateTo('home')" class="heading text-3xl tracking-widest cursor-pointer text-[#5C3A21]">IMPÉRO</h1>
+      <div class="hidden md:flex gap-8 text-sm tracking-widest">
+        <a onclick="navigateTo('home')" class="hover:text-[#C6A76A] cursor-pointer">HOME</a>
+        <a onclick="navigateTo('collection')" class="hover:text-[#C6A76A] cursor-pointer">COLLECTION</a>
+        <a onclick="navigateTo('newarrivals')" class="hover:text-[#C6A76A] cursor-pointer">NEW ARRIVALS</a>
+        <a onclick="navigateTo('bespoke')" class="hover:text-[#C6A76A] cursor-pointer">BESPOKE</a>
+      </div>
+      <i onclick="toggleCart()" class="fa-solid fa-bag-shopping text-2xl cursor-pointer hover:text-[#C6A76A]"></i>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <section id="home" class="min-h-screen relative flex items-center">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1610030469984-7c2c3e8f0b0a?w=2000')] bg-cover bg-center"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60"></div>
+    
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <h1 id="mainTitle" class="heading text-6xl md:text-8xl text-white tracking-widest">TAILORED FOR</h1>
+      <h1 id="legacy" class="heading text-7xl md:text-[120px] leading-none text-[#C6A76A] tracking-widest">LEGACY</h1>
+      <p class="mt-6 text-white/90 text-xl max-w-lg mx-auto">Exquisite craftsmanship. Timeless elegance. Royal heritage.</p>
+      <button onclick="navigateTo('collection')" 
+        class="mt-12 px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-black text-lg tracking-widest transition-all">
+        DISCOVER COLLECTION
+      </button>
+    </div>
+  </section>
+
+  <!-- COLLECTION PAGE -->
+  <section id="collection" class="py-20 bg-[#F8F4ED]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="heading text-5xl text-center mb-4 text-[#5C3A21]">Our Collections</h2>
+      <p class="text-center text-gray-600 mb-12">Handcrafted for those who value legacy</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVALS -->
+  <section id="newarrivals" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="heading text-5xl mb-12">New Arrivals</h2>
+      <p class="text-gray-600">Freshly tailored masterpieces for the modern royal.</p>
+    </div>
+  </section>
+
+  <!-- BESPOKE -->
+  <section id="bespoke" class="py-20 bg-[#F8F4ED]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="heading text-5xl mb-8">Bespoke Experience</h2>
+      <p class="text-lg text-gray-700">Your vision. Our craftsmanship. One exclusive piece.</p>
+      <button class="mt-10 px-12 py-6 bg-[#5C3A21] text-white text-lg tracking-widest hover:bg-[#C6A76A] hover:text-black">BOOK YOUR CONSULTATION</button>
+    </div>
+  </section>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+    <div class="bg-white/95 backdrop-blur-xl max-w-4xl w-full rounded-3xl overflow-hidden" id="modalContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
